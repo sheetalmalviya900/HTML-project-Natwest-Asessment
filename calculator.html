@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <!-- <link rel="stylesheet" href="./calculator.css"> -->
+    <style>
+        #maindiv {
+            width: 70vw;
+            height: 75vh;
+            border: 0.002vw solid black;
+            margin: auto;
+            margin-top: 10vh;
+            display: flex;
+            flex-direction: row;
+            background-image: linear-gradient(to right, gray, black);
+        }
+
+        #div1 {
+            width: 30vw;
+            height: 75vh;
+        }
+
+        #calculator {
+            width: 20vw;
+            height: 70vh;
+            border: 0.002vw solid white;
+            box-shadow: 0.2px 0.2px 0.2px 0.2px white;
+            margin: auto;
+            border-radius: 3vh;
+            margin-top: 3vh;
+            margin-left: 8vh;
+            background-color: rgb(5, 4, 4);
+        }
+
+        h2 {
+            font-size: 8vh;
+            margin: 0vh;
+            color: white;
+        }
+
+        h1 {
+            font-size: 17vh;
+            margin: 0vh;
+            color: white;
+        }
+
+        #div2 {
+            width: 50vw;
+            height: 75vh;
+        }
+
+        #head1 {
+            width: 20vw;
+            height: 2vh;
+            display: flex;
+            flex-direction: row;
+            /* background-color: black; */
+            margin-top: 2vh;
+            display: flex;
+            flex-direction: row;
+        }
+
+        #head2 {
+            width: 20vw;
+            height: 20vh;
+            border: 0.002vh solid black;
+            color: white;
+        }
+
+        #head3 {
+            width: 20vw;
+            height: 40vh;
+            border: 0.002vh solid black;
+            display: grid;
+            grid-template-columns: auto auto auto auto;
+        }
+
+        #key {
+            width: 4vw;
+            height: 7vh;
+            border-radius: 50%;
+            border: 0.002vh solid black;
+            margin: auto;
+            background-color: rgb(238, 235, 235);
+        }
+
+        #key1 {
+            width: 4vw;
+            height: 7vh;
+            border-radius: 50%;
+            border: 0.002vh solid black;
+            margin: auto;
+            background-color: rgb(238, 190, 100);
+            color: white;
+        }
+
+        #key2 {
+            width: 4vw;
+            height: 7vh;
+            border-radius: 50%;
+            border: 0.002vh solid black;
+            margin: auto;
+            background-color: rgb(162, 156, 156);
+            color: white;
+        }
+
+        p {
+            font-size: 3vh;
+            text-align: center;
+            margin-top: 2vh;
+            font: bold;
+        }
+
+        hr {
+            height: 0.5vh;
+            width: 7vw;
+            /* color: black; */
+            margin-top: 4vh;
+            background-color: aliceblue;
+        }
+
+        h6 {
+            color: white;
+            font-size: 1vw;
+            margin-top: 0.7vh;
+            margin-left: 2vh;
+        }
+
+        h3 {
+            font-size: 5vh;
+            margin-top: 13vh;
+            margin-left: 10vw;
+            font-size: 6vh;
+        }
+
+        #img {
+            /* border: 2px solid white; */
+            width: 5vw;
+            height: 2vh;
+            margin-left: 11vw;
+            display: flex;
+            flex-direction: row;
+        }
+
+        img {
+            width: 1vw;
+            height: 2vh;
+            margin-left: 0.5vw;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="maindiv">
+        <div id="div1">
+            <div id="calculator">
+                <div id="head1">
+                    <h6>04.30</h6>
+                    <div id="img">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2mT92q6RzgJCwjvPhQJTZSn3722QmED5sHg&usqp=CAU"
+                            alt="">
+                        <img src="https://png.pngtree.com/png-clipart/20190520/original/pngtree-vector-signal-icon-png-image_4254420.jpg"
+                            alt="">
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAaVBMVEUAAAD8/vz////Q0tCTlJPe4N6pqqm1t7XBw8GQkpDi5OJmZ2Y+Pz7x8/G4ubgjIyN1dnVwcHAYGBjLzctbXFuLjIs4ODhqa2pUVVROTk6goaDIycjp6+ksLCyAgYD09vRHSEcxMTEMDAw5spK6AAAEDUlEQVR4nO2da1fiMBCGabgpd5VlVUB2/f8/cisu5whNJm3zDkzD+3z2tHmcThJKZuj1CCGEEEIIIYQQQgghhBBCCCGEEEIIIYQQQgghhJjlc/re7xyP09p+s+3cdZL5YlnHb7Mt/7boJOXAF3HBQVf1vnG7VVTw1mNMxDlZcdt1wRL3lHMEjwiKqywES8WQ4H6ei2E/YDjORLBUfPMKbm49LhyBIH5kE8JS8dln+JKT4btvnslIsHBDj+EyJ0PvgrHO3nAkG976k1EVpGF5tcNoYIvH8aEQJN2ggaFzu4+Nb/K9NbOHcCDdY/XvQ4al3/UHX5NN0LGBoZtcf+ANCO2l6xu6X9cfdSOWE/+46xqaF+wF9mJ1Dbsg2NsffCOvZ2g8B088exTrGppcJKp4Xr74nr6qoe//MF1Nhm2Y/NZUHFbHvitvujr/DOUx/HN5pcGw9R7Lt9mHMfUE8bix6//8sF8xdA8X11nHNoMSTjWI4f1Y/1UwvNjLpL3G0Q3iIrx9c6Ow4dk19rvET1eu/ldDzXmVNuHjpd/wfKn461t0mhlqLj0zaXRu/uk3HP+8RHW2aq6oGUT/3u1051HcMPycNzDUzMS+OMDvKUUyFB+C+oqKQZQNi2ITMcS8aNTMxIjh8ZtTwfAN9JJKcU2MxbCYiYaod8WKmRgz/NqnCoaAifT/NdUyMWr4IhmiHlLNTIw+pW4vGD7h3hWrBTFuuBQMgV/uq2Vi3HAqGD4A3/drTadxw9G1DJWCaMdQK4iWDHWmU0OGStOpKUOVIFoy1AmiLUON6dSUocp0asxQIYi2DDUy0Zohfjo1ZqgQRHOG8Ey0ZogPoj1DdCaaM4SviQYNwZlozxCdiRYNsZlo0BAcRJOG0Ey0aIidTm0aIoNo0hCaiUYNgdOpTUNkEK0a4oJo1BAYRLOGsCBaNcStiXYNUWuiWUNYJho2BGWiXUNUEC0bYjLRsCEoiGmGuo0WMJmYdhYDeJ7Ge2/Emph2ngZ3Jsp/b0Qmpp2Jwp1rC9wckIlp59q069gRmZh4NlH5MUUEMfF8qXoQ0zMx8Yww6Jy3MACpaQ7CMHrOG3JWXyA9E1PP6mtPp3VadMm0qrcA18xII0gOYauaGXTdkzCC5Ai2q3sC166FBwAQbFu7Bq0/DA5guE4XbFl/iK0h9VNA/NrWkELrgP3Fwas9wq99HXD+tdx3UI+ff0+Fbigm9cXogGJqbxPzuZjen6bIv8dQkX+fqKNj3r2+TpbWkIfriXn+Pffy75uYf+/L/PuX3kEP2vz7COffC/oO+nnn35P9Dvrq56EY+Zqn84qx37e4g98ouYPfmenl/1tBX+T+e0+EEEIIIYQQQgghhBBCCCGEEEIIIYQQQgghhBBCDPAPhfxqDmfWiZIAAAAASUVORK5CYII="
+                            alt="">
+                    </div>
+                </div>
+                <div id="head2">
+                    <h3>1,333.3</h3>
+                </div>
+                <div id="head3">
+                    <div id="key">
+                        <p>AC</p>
+                    </div>
+                    <div id="key">
+                        <p>+-</p>
+                    </div>
+                    <div id="key">
+                        <p>%</p>
+                    </div>
+                    <div id="key1">
+                        <p>/</p>
+                    </div>
+                    <div id="key2">
+                        <p>7</p>
+                    </div>
+                    <div id="key2">
+                        <p>8</p>
+                    </div>
+                    <div id="key2">
+                        <p>9</p>
+                    </div>
+                    <div id="key1">
+                        <p>*</p>
+                    </div>
+                    <div id="key2">
+                        <p>4</p>
+                    </div>
+                    <div id="key2">
+                        <p>5</p>
+                    </div>
+                    <div id="key2">
+                        <p>6</p>
+                    </div>
+                    <div id="key1">
+                        <p>-</p>
+                    </div>
+                    <div id="key2">
+                        <p>1</p>
+                    </div>
+                    <div id="key2">
+                        <p>2</p>
+                    </div>
+                    <div id="key2">
+                        <p>3</p>
+                    </div>
+                    <div id="key1">
+                        <p>+</p>
+                    </div>
+                    <dic id="key2">
+                        <p>#</p>
+                    </dic>
+                    <div id="key2">
+                        <p>0</p>
+                    </div>
+                    <div id="key2">
+                        <p>.</p>
+                    </div>
+                    <div id="key1">
+                        <p>=</p>
+                    </div>
+                </div>
+                <hr>
+            </div>
+        </div>
+        <div id="div2">
+            <h2>Build an </h2>
+            <h1>iPhone Calculator</h1>
+            <h2>in <span style="color: rgb(244, 244, 60); font-size: 15vh;">Javascript</span></h2>
+        </div>
+    </div>
+</body>
+
+</html>

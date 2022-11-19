@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website</title>
+    <style>
+        #maindiv{
+            width: 70vw;
+            height: 90vh;
+            border: 0.001vw solid black;
+            margin-left: 14vw;
+            margin-top: 2vh;
+            box-shadow: 1vw 1vw 1vw 1vw gray;
+        }
+        #heading{
+            width: 70vw;
+            height: 4vh;
+            border: 0.001vw solid black;
+            display: flex;
+            flex-direction: row;
+            background-color: rgb(44, 41, 41);
+        }
+        #mainheading{
+            width: 64vw;
+            height: 35vh;
+            /* border: 0.001vw solid black; */
+            margin-left: 3vw;
+            margin-top: -2.5vh;
+            background-color: rgb(235, 232, 232);
+            border-radius: 1vh;
+        }
+        #grid{
+            width: 64vw;
+            height: 40vh;
+            margin-left: 3vw;
+            margin-top: 1vh;
+            /* border: 0.001vw solid black; */
+            display: grid;
+            grid-template-columns: auto auto auto;
+        }
+        #grid1,#grid2,#grid3{
+            width: 20vw;
+            height: 40vh;
+            /* border: 0.001vw solid black; */
+        }
+        #name,#input{
+            width: 35vw;
+            height: 4vh;
+            display: flex;
+            flex-direction: row;
+        }
+        #p1{
+            font-size: 1.2vw;
+            margin-top: 0.5vh;
+            margin-left: 1.9vw;
+            padding: auto;
+            color: white;
+        }
+        input{
+            width: 7vw;
+            height: 2.5vh;
+            margin-left: 3vw;
+            margin-top: 0.2vh;
+            border-radius: 0.5vh;
+        }
+        #sign{
+            width: 7vw;
+            height: 3.3vh;
+            margin-left: 3vw;
+            margin-top: 0.2vh;
+            border-radius: 0.5vh;
+        }
+        h1{
+            font-size: 8vh;
+            margin-left: 6vh;
+            /* margin-top: 3vh; */
+        }
+        h3{
+            font-style: oblique;
+            margin-left: 6vh;
+            font-size: 2.5vh;
+            margin-top: -2vh;
+        }
+        #learnmore{
+            background-color: rgb(9, 9, 229);
+            width: 8vw;
+            height: 5vh;
+            border-radius: 0.5vh;
+            margin-left: 3.2vw;
+            margin-top: 3vh;
+        }
+        h2{
+            font-size: 4vh;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="maindiv">
+        <div id="heading">
+            <div id="name">
+                <p id="p1">Project Name</p>
+                <p id="p1">Home</p>
+                <p id="p1">About</p>
+                <p id="p1">Contact</p>
+                <p id="p1">Dropdown</p>
+            </div>
+            <div id="input">
+                <input  type="email" placeholder="Email">
+                <input type="password" placeholder="Password">
+                <button id="sign">Sign in</button>
+            </div>
+        </div>
+        <div id="mainheading">
+            <h1>Hello, world!</h1>
+            <h3>This is a template for a simple marketing or informational website. It includes a large callout called the hero unit and three supporting pieces of content. Use it as a starting point to create something more unique.</h3>
+            <button id="learnmore">Learn More >></button>
+        </div>
+        <div id="grid">
+            <div id="grid1">
+                <h2>Heading</h2>
+                <p>Migrate your existing users to Passage with a quick import, or easily build just-in-time provisioning to transition over time. Our team is happy to point you in the right direction. passageway. an opening or entrance into, through, or out of something: the nasal passages.</p>
+                <button>View details >></button>
+            </div>
+            <div id="grid2">
+                <h2>Heading</h2>
+                <p>
+                    There is often a lot of confusion, but if you are looking for a general answer to the question, "How many sentences are there in a paragraph?” The answer is that there are 3 to 8 lines in a paragraph. The important key to this answer is that it is a golden rule to the delhi is capital</p>
+                <button>View details >></button>
+            </div>
+            <div id="grid3">
+                <h2>Heading</h2>
+                <p>How many words in a paragraph? As you can expect, there is no fixed number of words that a paragraph should have. A rule of thumb: the paragraphs are usually about 100 to 200 words long, which is about 6-8 sentences. It can always lead you to, invent a sentence. A sentence then might carry you into</p>
+                <button>View details >></button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
