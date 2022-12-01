@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>instagram</title>
+    <style>
+        .container {
+            width: 21vw;
+            height: 45vh;
+            margin: auto;
+        }
+
+        #login {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            
+        }
+
+        #maindiv {
+            width: 24vw;
+            height: auto;
+            margin: auto;
+            border: 0.005vw solid black;
+            box-shadow: 2px 2px 2px 2px;
+        }
+
+        h1 {
+            margin-left: 0.5vh;
+            font-size: 2.5vw;
+            margin-top: 2vh;
+        }
+
+        input {
+            margin-top: 1vh;
+            height: 5vh;
+            width: 18vw;
+            background-color: snow;
+            border-radius: 0.2vw;
+        }
+
+        #HR {
+            display: flex;
+            flex-direction: row;
+            font-size: 12px;
+            margin-top: 2vh;
+        }
+
+        hr {
+            color: black;
+            width: 6vw;
+        }
+
+        button {
+            margin-top: 1vh;
+            height: 5vh;
+            width: 18vw;
+            background-color: white;
+        }
+
+        .loginOrSignup {
+            margin-left: 39px;
+            margin-top: 7vh;
+        }
+
+        h6 {
+            margin-top: 0.5vh;
+            color: blue;
+        }
+
+        #img {
+            display: flex;
+            margin-top: -1vh;
+            flex-direction: row;
+            margin-left: 0.5vw;
+        }
+
+        img {
+            width: 10vw;
+            height: 5vh;
+        }
+
+        p {
+            margin-top: 6vh;
+        }
+
+        h4 {
+            color: darkblue;
+            margin-left: -2vw;
+        }
+
+        #facebook {
+            display: flex;
+            flex-direction: row;
+        }
+
+        #facebook1 {
+            width: 7vw;
+            height: 7vh;
+            margin-top: 1vh;
+            margin-left: -2vw;
+        }
+
+        .BTN {
+            background-color: blue;
+            color: white;
+        }
+
+        #facebook2 {
+            width: 6vw;
+            height: 6vh;
+            margin-top: -1vh;
+            margin-left: -2vw;
+        }
+
+        h5 {
+            margin-left: -1.5vw;
+            margin-top: 1vh;
+        }
+
+        #head {
+            text-align: center;
+            margin-top: -3vh;
+        }
+
+        #Hr {
+            display: flex;
+            flex-direction: row;
+            font-size: 12px;
+            margin-top: -1vh;
+        }
+
+        #IMG {
+            margin-top: 5vh;
+        }
+
+        #app {
+            margin-left: 7vw;
+            margin-top: 10vh;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="maindiv">
+        <div class="container"></div>
+        <div class="loginOrSignup"></div>
+    </div>
+    <script>
+        const container = document.querySelector('.container');
+        const LOrSBtn = document.querySelector('.loginOrSignup')
+        let loginBoolean = false
+        const displayFunction = () => {
+            loginBoolean ? LOrSBtn.innerHTML = `Don't have account?<span style="color:darkblue;">Sign Up</span>` : LOrSBtn.innerHTML = `<p style="margin-top:18vh; margin-left:3vw;">Have an account?<span style="color:darkblue;">Log in</span></p>`
+            //true -> then-->else
+
+            loginBoolean ? container.innerHTML += `<div id="login">
+<h1>𝓘𝓷𝓼𝓽𝓪𝓰𝓻𝓪𝓶</h1>
+<input type="email" placeholder="Phone number,username,email">
+<input type="password" placeholder="password">
+<button class="BTN">Login</button>
+<div id="HR">
+<hr>OR<hr>
+</div>
+<div id="facebook">
+<img id="facebook1"src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxsprSO1LA2iy0gXuRA_03ut1U_FlRW8Vung&usqp=CAU" alt="">
+<h4>Login with a Facebook</h4>
+</div>
+<h6>Forgate Password?</h6>
+</div>`: container.innerHTML += ` <div id="login">
+     
+<h1>𝓘𝓷𝓼𝓽𝓪𝓰𝓻𝓪𝓶</h1>
+<p id="head">Sign up see photos and videos from your friends.</p>
+<div id="facebook">
+<img id="facebook2"src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxsprSO1LA2iy0gXuRA_03ut1U_FlRW8Vung&usqp=CAU" alt="">
+<h5>Login with a Facebook</h5>
+</div>
+<div id="Hr">
+<hr>OR<hr>
+</div>
+<input type="email" placeholder="Mobile Number or Email">
+<input type="text" placeholder="Full Name">
+<input type="text" placeholder="Username">
+<input type="password" placeholder="password">
+<button class="BTN">Signup</button>
+</div>
+<p id="app">Get the app</p>
+<div id="IMG">
+<img src="https://static.cdninstagram.com/rsrc.php/v3/yt/r/Yfc020c87j0.png" alt="">
+<img src="https://static.cdninstagram.com/rsrc.php/v3/yz/r/c5Rp7Ym-Klz.png" alt="">
+</div>`
+        }
+        displayFunction()
+        LOrSBtn.addEventListener('click', () => {
+            loginBoolean = !loginBoolean
+            container.innerHTML = ''
+            displayFunction()
+        })
+    </script>
+</body>
+
+</html>
